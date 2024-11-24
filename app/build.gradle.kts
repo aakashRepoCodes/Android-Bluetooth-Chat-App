@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.hilt.android) apply false
+    alias(libs.plugins.hilt.android)
     id("kotlin-kapt")
 }
 
@@ -72,7 +72,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation(libs.hilt.android) // Hilt core library
-    kapt(libs.hilt.compiler) // Hilt annotation processor
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+    implementation(libs.hilt.navigation.compose)
 
 }

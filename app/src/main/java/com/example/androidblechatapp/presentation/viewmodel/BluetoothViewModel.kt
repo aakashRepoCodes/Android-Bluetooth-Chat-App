@@ -1,6 +1,5 @@
 package com.example.androidblechatapp.presentation.viewmodel
 
-import androidx.compose.runtime.MutableState
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.androidblechatapp.domain.BluetoothController
@@ -10,9 +9,10 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
+import javax.inject.Inject
 
 @HiltViewModel
-class BluetoothViewModel(
+class BluetoothViewModel @Inject constructor(
     private val bluetoothController: BluetoothController
 ): ViewModel() {
 
@@ -32,6 +32,5 @@ class BluetoothViewModel(
     fun startScan() = bluetoothController.startDiscovery()
 
     fun stopScan() = bluetoothController.stopDiscovery()
-
 
 }
